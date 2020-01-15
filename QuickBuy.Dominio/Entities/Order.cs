@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuickBuy.Dominio.ValueObject;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -15,6 +16,8 @@ namespace QuickBuy.Dominio.Entities
         public string City { get; set; }
         public string FullAddress { get; set; }
         public string AddressNumber { get; set; }
+        public int PaymentMethodId { get; set; }
+        public PaymentMethod PaymentMethod { get; set; }
 
         public ICollection<OrderItem> OrderItems { get; set; }
     }

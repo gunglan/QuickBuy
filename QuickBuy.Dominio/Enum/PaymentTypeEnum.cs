@@ -4,7 +4,11 @@ using System.Text;
 
 namespace QuickBuy.Dominio.Enum
 {
-    class PaymentTypeEnum
+    public enum PaymentTypeEnum
     {
+        Undefined = 0,
+        Bill = 1,
+        CreditCard = 2,
+        Deposit = 3
     }
 }
