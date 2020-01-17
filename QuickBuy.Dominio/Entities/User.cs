@@ -4,7 +4,7 @@ using System.Text;
 
 namespace QuickBuy.Dominio.Entities
 {
-    public class User
+    public class User : Entitie
     {
         public int Id { get; set; }
         public string Email { get; set; }
@@ -12,5 +12,10 @@ namespace QuickBuy.Dominio.Entities
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
         public ICollection<Order> Orders { get; set; }
+
+        public override void Validate()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

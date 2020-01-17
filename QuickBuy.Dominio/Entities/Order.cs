@@ -5,7 +5,7 @@ using System.Text;
 
 namespace QuickBuy.Dominio.Entities
 {
-    public class Order
+    public class Order : Entitie
     {
         public int Id { get; set; }
         public DateTime OrderDate { get; set; }
@@ -20,5 +20,18 @@ namespace QuickBuy.Dominio.Entities
         public PaymentMethod PaymentMethod { get; set; }
 
         public ICollection<OrderItem> OrderItems { get; set; }
+
+        public override void Validate()
+        {
+            LimparMensagemValidacao();
+            if (!OrderItem.Any())
+                AdicionarCritica("Crítica - Pedido não pode ficar sem item de pedido");
+
+            if (string.IsNullOrEmpty(CEP))
+                AdicionarCritica("Crítica - CEP deve estar preenchido");
+
+            if (PaymentMethodId == 0)
+                AdicionarCritica("Crítica - Não foi informado a forma de pagamento");
+        }
     }
 }

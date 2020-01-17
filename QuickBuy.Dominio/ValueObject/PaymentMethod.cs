@@ -13,19 +13,19 @@ namespace QuickBuy.Dominio.ValueObject
 
         public bool ItsBill
         {
-            get { return == (int)PaymentTypeEnum.Bill; }
+            get { return Id == (int)PaymentTypeEnum.Bill; }
         }
         public bool ItsCreditCard
         {
-            get { return == (int)PaymentTypeEnum.CreditCard; }
+            get { return Id == (int)PaymentTypeEnum.CreditCard; }
         }
         public bool ItsDeposit
         {
-            get { return == (int)PaymentTypeEnum.Deposit; }
+            get { return Id == (int)PaymentTypeEnum.Deposit; }
         }
         public bool ItsUndefined
         {
-            get { return == (int)PaymentTypeEnum.Undefined; }
+            get { return Id == (int)PaymentTypeEnum.Undefined; }
         }
     }
 }
